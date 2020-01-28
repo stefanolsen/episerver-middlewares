@@ -7,6 +7,12 @@ namespace StefanOlsen.Episerver.Owin.AnonymousId
     public static class AppBuilderExtensions
     {
         public static IAppBuilder UseAnonymousAuthentication(
+            this IAppBuilder app)
+        {
+            return UseAnonymousAuthentication(app, new AnonymousIdentificationOptions());
+        }
+
+        public static IAppBuilder UseAnonymousAuthentication(
             this IAppBuilder app,
             AnonymousIdentificationOptions options)
         {
