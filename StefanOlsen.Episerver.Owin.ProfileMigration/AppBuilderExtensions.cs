@@ -14,7 +14,7 @@ namespace StefanOlsen.Episerver.Owin.ProfileMigration
                 throw new ArgumentNullException(nameof(app));
             }
 
-            app.Use(typeof(ProfileMigrationMiddleware));
+            app.Use(typeof(ProfileMigrationMiddleware), app);
             app.UseStageMarker(PipelineStage.PostAuthenticate);
 
             return app;
